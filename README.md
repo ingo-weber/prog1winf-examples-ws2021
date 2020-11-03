@@ -1,1 +1,1 @@
-# prog1winf-examples-ws2021
+# prog1 WInf examples - WS 2020 / 2021
