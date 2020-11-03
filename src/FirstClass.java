@@ -14,13 +14,6 @@ public class FirstClass
         i = -5;
         j = +i;
         System.out.println("i is " + i + " and j is " + j);
-        System.out.println("i is " + i++ + " and j is " + ++j);
-        long l = 200;
-        long k = 200_000_000_000L;
-        float f = 0.5f;
-        System.out.println("l is " + l + " and k is    " + k);
-        System.out.println("f is " + f + " and k+f is " + ((double)k+f));
-        System.out.println("f is " + f + " and k+f is " + (k+f));
         i = 3-5;
         i = 3*5;
         i=3/5;

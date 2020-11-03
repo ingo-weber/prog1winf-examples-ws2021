@@ -12,15 +12,15 @@ public class Types {
         System.out.println("by is " + by);
         //short (about -32k to 32k, 16 Bits)
         short s = -20000;
-        s = 15000;
+//        s = 15000;
         System.out.println("s is " + s);
         //char(acter) (16 Bits)
         char c = 'H';
         c = 'a';
         System.out.println("c is " + c);
-//        c = '\u2620';
-//        c = '\u2603';
-//        c = '\u2278';
+        c = '\u2620';
+        c = '\u2603';
+        c = '\u2278';
         c = '\u3020';
         System.out.println("c is " + c);
 
@@ -49,5 +49,12 @@ public class Types {
         System.out.println("s is " + s);
         by = (byte) s;
         System.out.println("by is " + by);
+
+        l = 200;
+        long k = 200_000_000_000L;
+        f = 0.5f;
+        System.out.println("l is " + l + " and k is    " + k);
+        System.out.println("f is " + f + " and k+f is " + ((double)k+f));
+        System.out.println("f is " + f + " and k+f is " + (k+f));
     }
 }

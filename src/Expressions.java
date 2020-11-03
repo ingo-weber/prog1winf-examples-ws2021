@@ -9,11 +9,11 @@ public class Expressions {
         System.out.println("a is " + a);
 
         //What's the difference?
-        System.out.println("What's the difference?:");
-        System.out.println("a is " + a++);
-        System.out.println("a is " + a);
-        System.out.println("a is " + ++a);
-        System.out.println("a is " + a);
+        System.out.println("What's the difference between ++a and a++?:");
+        System.out.println("a++ is " + a++);
+        System.out.println("  a is " + a);
+        System.out.println("++a is " + ++a);
+        System.out.println("  a is " + a);
 
         //Two operands
         int b = 10;
