@@ -1,14 +1,14 @@
 public class BooleanOperators {
 
     public static void main(String[] args) {
-        int a = 2;
-        int b = 4;
         boolean c = true;
         boolean d = false;
 
         //AND: All must be true
         boolean and = c & d;
         System.out.println("and is " + and);
+        int a = 2;
+        int b = 4;
         and = c & (b % a == 0);
         System.out.println("and is " + and);
 
@@ -40,14 +40,18 @@ public class BooleanOperators {
 
         int i = 5;
         boolean x = (true & (i = 10) == 10);
-        System.out.println("x is " + x + " i, is " + i);
+        System.out.println("x is " + x + ", i is " + i);
 
         i = 5;
         x = (false & (i = 10) == 10);
-        System.out.println("x is " + x + " i, is " + i);
+        System.out.println("x is " + x + ", i is " + i);
 
         i = 5;
         x = (false && (i = 10) == 10);
-        System.out.println("x is " + x + " i, is " + i);
+        System.out.println("x is " + x + ", i is " + i);
+
+        i = 5;
+        x = (true && (i = 10) == 10);
+        System.out.println("x is " + x + ", i is " + i);
     }
 }
