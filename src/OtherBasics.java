@@ -29,15 +29,17 @@ public class OtherBasics {
         //Variable names (Identifiers)
         int oneNumber = 10;
         String spargel = "Pudding";
-        //int double = 50;
+//        int double = 50;
         //see "forbidden keywords"
+
         int myNumber = IOTools.readInteger("Geben Sie eine Nummer ein: ");
+        System.out.println();
         System.out.println("Ihre Nummer: " + myNumber);
 
         //Math
         double rand = Math.random();
         System.out.println("Random: " + rand);
-        rand = rand * 10;
+        rand = 1+ rand * 10;
         System.out.println("Random *10: " + rand);
         int randomNumber = (int) rand;
         System.out.println("RandomNumber: " + randomNumber);

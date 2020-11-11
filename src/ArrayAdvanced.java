@@ -2,9 +2,11 @@ public class ArrayAdvanced {
 
     public static void main(String[] args) {
         //Length
-        int[] numbers = {2,5,3,4};
+        int[] numbers = {2,5,3,4,9,56};
         System.out.println("Es gibt " + numbers.length + " Elemente im Arrray");
         System.out.println("Das erste Element ist " + numbers[0]);
+        // Guaranteed ArrayIndexOutOfBoundsException:
+//        System.out.println("Das letzte Element ist " + numbers[numbers.length]);
         System.out.println("Das letzte Element ist " + numbers[numbers.length-1]);
         System.out.println("-----------------");
 
@@ -12,7 +14,9 @@ public class ArrayAdvanced {
         boolean[][] seats = new boolean[30][20];
         seats[2][10] = true;
         System.out.println("Seat (2,10): " + seats[2][10]);
-        //seats[31][10] = true;
+        System.out.println("Seat (2,11): " + seats[2][11]);
+        System.out.println("Seat (3,10): " + seats[3][10]);
+//        seats[31][10] = true;
 
         System.out.println("Multidim. length: " + seats.length);
         System.out.println("Multidim. length, 2nd dimension: " + seats[0].length);
@@ -34,6 +38,7 @@ public class ArrayAdvanced {
 
         char[] c = new char[1];
         System.out.println("c is " + c[0]);
+        // This is the "null" character with value '\u0000'
 
         String[] s = new String[1];
         System.out.println("s is " + s[0]);

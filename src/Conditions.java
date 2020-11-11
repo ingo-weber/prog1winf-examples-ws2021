@@ -4,17 +4,19 @@ import Prog1Tools.IOTools;
 public class Conditions {
 
     public static void main(String[] args) {
-        int i = IOTools.readInt("Geben Sie eine Zahl ein: ");
+        int i = 5;
+        i = IOTools.readInt("Geben Sie eine Zahl ein: ");
 
         if (i % 2 == 0) {
             System.out.println("Gerade Zahl");
 
-            if (i % 4 == 0 ) {
+            if (i % 4 == 0) {
                 System.out.println("Auch durch 4 teilbar");
             }
         } else {
             System.out.println("Ungerade Zahl");
         }
+
 
         System.out.println("-----------------");
 
@@ -45,5 +47,6 @@ public class Conditions {
             default:
                 System.out.println("Ein anderes Zeichen");
         }
+
     }
 }
