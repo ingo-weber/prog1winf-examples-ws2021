@@ -1,5 +1,10 @@
 public class MethodsBasics {
     public static void main(String[] args) {
+        if (args.length >= 1) {
+            System.out.println("Dieses Programm akzeptiert keine Parametereingabe");
+            System.out.println("Erster eingegebener Paramter: " + args[0]);
+            return;
+        }
         int[] myArray = {1, 2, 3, 4, 5};
         int[] myArray2 = {6, 7, 8, 9, 10};
         int[] myArray3;
