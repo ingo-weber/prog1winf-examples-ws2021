@@ -1,7 +1,5 @@
 package de.tuberlin.sbe.prog1winf.datastructures;
 
-import java.util.List;
-
 public class SinglyLinkedList {
 
 	/** head of the list */
