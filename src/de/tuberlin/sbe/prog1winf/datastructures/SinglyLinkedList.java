@@ -1,9 +1,13 @@
 package de.tuberlin.sbe.prog1winf.datastructures;
 
+import java.util.List;
+
 public class SinglyLinkedList {
 
 	/** head of the list */
 	private ListEntry head;
+
+//	private ListEntry lastEntry;
 
 	/**
 	 * inserts a values at the end of the list
@@ -30,20 +34,20 @@ public class SinglyLinkedList {
 		// Why do you need this last statement?
 	}
 
-//	public void appendNeu(Object value){
-//		ListEntry neu = new ListEntry();
-//		neu.value = value;
-//		if(head==null){
-//			head = neu;
-//			return;
-//		}
-//		ListEntry temp = head;
-//		while(temp.next!= null) {
-//			temp = temp.next;
-//		}
-//
-//		temp.next = neu;
-//	}
+	public void appendNeu(Object value){
+		ListEntry neu = new ListEntry();
+		neu.value = value;
+		if(head==null){
+			head = neu;
+			return;
+		}
+		ListEntry temp = head;
+		while(temp.next!= null) {
+			temp = temp.next;
+		}
+
+		temp.next = neu;
+	}
 
 	/**
 	 * Get value at a specific position
@@ -72,19 +76,21 @@ public class SinglyLinkedList {
 	public void deleteValue(Object value) {
 		if (head == null)
 			return; // empty list
-		ListEntry current = head, last = head;
-		if (current.value == value) {
+		
+		if (head.value == value) {
 			// it's the head element
 			head = head.next;
 			return;
 		}
+		
+		ListEntry current = head, entryB4DelMe = head;
 		while (current.next != null && current.value != value) {
-			last = current;
+			entryB4DelMe = current;
 			current = current.next;
 		}
-		if (current.value != value)
+		if (current.value != value) // (current.next == null)
 			return; // not in this list
-		last.next = current.next;
+		entryB4DelMe.next = entryB4DelMe.next.next;
 
 	}
 
@@ -117,8 +123,9 @@ public class SinglyLinkedList {
 	 */
 	public void insertAfter(Object value, Object after) {
 		if (head == null) {
-			head = new ListEntry();
-			head.value = value;
+//			head = new ListEntry();
+//			head.value = value;
+			System.out.println("Empty list, cannot insert after " + after);
 			return;
 		}
 		ListEntry newone = new ListEntry();
@@ -126,9 +133,37 @@ public class SinglyLinkedList {
 		ListEntry current = head;
 		while (current.next != null && current.value != after)
 			current = current.next;
+		if (current.value != after) {
+			System.out.println("Cannot insert after " + after + ", element not found");
+			return;
+		}
 		ListEntry temp = current.next;
 		current.next = newone;
 		newone.next = temp;
+	}
+
+	public void insertAfterPos(int pos, Object value) {
+		if (head == null) {
+			System.out.println("Empty list, cannot insert after position " + pos);
+			return;
+		}
+		ListEntry current = head;
+		ListEntry newOne = new ListEntry();
+		newOne.value = value;
+		if (pos == 0) {
+			newOne.next = head;
+			head = newOne;
+			return;
+		}
+		for (int i = 0; i < pos; i++) {
+			if (current.next == null) {
+				System.out.println("Cannot insert after position " + pos + ", element not found");
+				return;
+			}
+			current = current.next;
+		}
+		newOne.next = current.next;
+		current.next = newOne;
 	}
 
 	/*
@@ -164,17 +199,24 @@ public class SinglyLinkedList {
 		System.out.println(sll.getValue(1));
 		sll.deleteValue(5);
 		System.out.println(sll);
+		sll.insertAfterPos(7, 29);
+		System.out.println(sll);
+		sll.insertAfterPos(2, 39);
+		System.out.println(sll);
 		sll.deleteValue(8);
 		System.out.println(sll);
 		sll.deleteValue(7);
 		System.out.println(sll);
 		sll.deleteValue(11);
 		System.out.println(sll);
+		
 		// Questions:
 		// 1. What happens if you try to get an object that doesn't exist (analogy: ArrayIndexOutOfBounds)
 		// 2. What about "InsertAfter" a non-existing element?
 		// 3. What if you have the same value twice, which operations behave differently from what you might expect? How do they behave?
 		// --> Think about the "corner cases" in programs
+
+		// Exercise: implement a doubly-linked list and test it
 	}
 
 }
