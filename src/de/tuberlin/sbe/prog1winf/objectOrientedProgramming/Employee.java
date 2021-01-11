@@ -1,5 +1,7 @@
 package de.tuberlin.sbe.prog1winf.objectOrientedProgramming;
 
+import java.util.Objects;
+
 public class Employee {
     static long nextID = 0;
 
@@ -21,6 +23,27 @@ public class Employee {
         System.out.println("EID: " + this.employeeID);
 //        System.out.println("EID: " + this.employeeID + ", Name: " + this.firstName + " " + this.lastName);
     }
+
+//    public long getEmployeeID() {
+//        return employeeID;
+//    }
+//
+//    public void setEmployeeID(long employeeID) {
+//        this.employeeID = employeeID;
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return employeeID == employee.employeeID;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(employeeID);
+//    }
 
     //    long employeeID;
 //    String lastName;
