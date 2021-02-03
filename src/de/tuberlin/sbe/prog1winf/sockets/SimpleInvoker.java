@@ -22,6 +22,7 @@ public class SimpleInvoker {
 			s.getOutputStream().write(k);
 			Thread.sleep(5);
 		}
+		s.close();
 		serverConnection.join();
 		System.out.println("Server thread is stopped");
 	}

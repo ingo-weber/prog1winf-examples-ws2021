@@ -11,10 +11,10 @@ import java.net.Socket;
 public class SimpleServer extends Thread{
 	
 	public void run() {
-//		try (ServerSocket server = new ServerSocket(8082);) {
-		ServerSocket server = null;
-		try {
-			server = new ServerSocket(8082);
+		try (ServerSocket server = new ServerSocket(8082);) {
+//		ServerSocket server = null;
+//		try {
+//			server = new ServerSocket(8082);
 			Socket client = server.accept();
 
 			int i;
@@ -26,13 +26,13 @@ public class SimpleServer extends Thread{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		finally {
-			try {
-				server.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+//		finally {
+//			try {
+//				server.close();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
 	}
 
 }
